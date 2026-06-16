@@ -1,6 +1,6 @@
 # Morella Beauty Store
 
-![Morella Beauty Store](images/morella-store.png)
+![Morella Beauty Store](assets/morella-store.png)
 
 An online beauty store offering a curated selection of skincare, makeup, and wellness products. Built to deliver a clean, fast, and playful shopping experience.
 
