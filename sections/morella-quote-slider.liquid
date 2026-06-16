@@ -1,0 +1,320 @@
+{% comment %}
+  Morella Quote Slider
+  - 5–6 slides with different background colors
+  - Stars, big quote, subline, CTA button
+  - Arrows + dots
+  - No external libraries
+{% endcomment %}
+
+<section class="morella-qs morella-qs--{{ section.id }}">
+  <div class="morella-qs__wrap">
+    <button class="morella-qs__arrow morella-qs__arrow--prev" type="button" aria-label="Previous slide">
+      ‹
+    </button>
+
+    <div class="morella-qs__viewport" data-qs-viewport>
+      <div class="morella-qs__track" data-qs-track>
+        {% for block in section.blocks %}
+          <div class="morella-qs__slide" data-qs-slide {{ block.shopify_attributes }}
+               style="background: {{ block.settings.bg }};">
+            <div class="morella-qs__inner">
+              {% if block.settings.show_stars %}
+                <div class="morella-qs__stars" aria-label="5 star rating">
+                  {% for i in (1..5) %}
+                    <span class="morella-qs__star">★</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+
+              {% if block.settings.quote != blank %}
+                <h2 class="morella-qs__quote">
+                  {{ block.settings.quote }}
+                </h2>
+              {% endif %}
+
+              {% if block.settings.subline != blank %}
+                <p class="morella-qs__subline">{{ block.settings.subline }}</p>
+              {% endif %}
+
+              {% if block.settings.button_label != blank %}
+                <a class="morella-qs__btn" href="{{ block.settings.button_link | default: '#' }}">
+                  {{ block.settings.button_label }}
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <button class="morella-qs__arrow morella-qs__arrow--next" type="button" aria-label="Next slide">
+      ›
+    </button>
+  </div>
+
+  <div class="morella-qs__dots" data-qs-dots aria-label="Slider pagination"></div>
+</section>
+
+<style>
+  .morella-qs--{{ section.id }}{
+    --text: {{ section.settings.text_color }};
+    --muted: {{ section.settings.muted_color }};
+    --btn-bg: {{ section.settings.btn_bg }};
+    --btn-text: {{ section.settings.btn_text }};
+    --arrow-bg: {{ section.settings.arrow_bg }};
+    --arrow-text: {{ section.settings.arrow_text }};
+    --maxw: {{ section.settings.max_width }}px;
+    --padY: {{ section.settings.padding_y }}px;
+  }
+
+  .morella-qs--{{ section.id }} .morella-qs__wrap{
+    position: relative;
+    width: 100%;
+  }
+
+  .morella-qs--{{ section.id }} .morella-qs__viewport{
+    overflow: hidden;
+  }
+
+  .morella-qs--{{ section.id }} .morella-qs__track{
+    display: flex;
+    width: 100%;
+    transform: translateX(0);
+    transition: transform .45s ease;
+  }
+
+  .morella-qs--{{ section.id }} .morella-qs__slide{
+    flex: 0 0 100%;
+    min-height: clamp(380px, 52vh, 560px);
+    display: grid;
+    place-items: center;
+    padding: var(--padY) 24px;
+  }
+
+  .morella-qs--{{ section.id }} .morella-qs__inner{
+    width: 100%;
+    max-width: var(--maxw);
+    text-align: center;
+    color: var(--text);
+  }
+
+  .morella-qs--{{ section.id }} .morella-qs__stars{
+    display: inline-flex;
+    gap: 10px;
+    margin-bottom: 18px;
+    font-size: clamp(24px, 3vw, 34px);
+    color: rgba(255,255,255,0.95);
+    text-shadow: 0 1px 0 rgba(0,0,0,0.08);
+  }
+
+  .morella-qs--{{ section.id }} .morella-qs__quote{
+    margin: 0 auto 16px;
+    font-size: clamp(28px, 4vw, 54px);
+    line-height: 1.15;
+    letter-spacing: .02em;
+    font-weight: 700;
+    color: rgba(255,255,255,0.95);
+    text-shadow: 0 1px 0 rgba(0,0,0,0.08);
+  }
+
+  .morella-qs--{{ section.id }} .morella-qs__subline{
+    margin: 0 0 22px;
+    font-size: 16px;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: .02em;
+  }
+
+  .morella-qs--{{ section.id }} .morella-qs__btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    border-radius: 10px;
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    font-size: 12px;
+    transition: transform .15s ease, filter .15s ease;
+  }
+  .morella-qs--{{ section.id }} .morella-qs__btn:hover{
+    transform: translateY(-1px);
+    filter: brightness(.97);
+  }
+
+  .morella-qs--{{ section.id }} .morella-qs__arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    border: 0;
+    cursor: pointer;
+    background: var(--arrow-bg);
+    color: var(--arrow-text);
+    font-size: 26px;
+    line-height: 1;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    transition: transform .15s ease, filter .15s ease;
+    z-index: 2;
+  }
+  .morella-qs--{{ section.id }} .morella-qs__arrow:hover{
+    filter: brightness(.96);
+    transform: translateY(-50%) scale(1.03);
+  }
+  .morella-qs--{{ section.id }} .morella-qs__arrow--prev{ left: 18px; }
+  .morella-qs--{{ section.id }} .morella-qs__arrow--next{ right: 18px; }
+
+  .morella-qs--{{ section.id }} .morella-qs__dots{
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding-bottom: 10px;
+  }
+  .morella-qs--{{ section.id }} .morella-qs__dot{
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    border: 0;
+    cursor: pointer;
+    background: rgba(255,255,255,0.45);
+    transition: transform .2s ease, background .2s ease, width .2s ease;
+  }
+  .morella-qs--{{ section.id }} .morella-qs__dot.is-active{
+    background: rgba(255,255,255,0.9);
+    width: 26px;
+  }
+
+  @media (max-width: 768px){
+    .morella-qs--{{ section.id }} .morella-qs__arrow--prev{ left: 10px; }
+    .morella-qs--{{ section.id }} .morella-qs__arrow--next{ right: 10px; }
+    .morella-qs--{{ section.id }} .morella-qs__slide{
+      padding: var(--padY) 16px;
+    }
+  }
+</style>
+
+<script>
+  (() => {
+    const root = document.querySelector('.morella-qs--{{ section.id }}');
+    if (!root) return;
+
+    const track = root.querySelector('[data-qs-track]');
+    const slides = Array.from(root.querySelectorAll('[data-qs-slide]'));
+    const dotsWrap = root.querySelector('[data-qs-dots]');
+    const prevBtn = root.querySelector('.morella-qs__arrow--prev');
+    const nextBtn = root.querySelector('.morella-qs__arrow--next');
+
+    if (!track || slides.length === 0) return;
+
+    let index = 0;
+    const autoplay = {{ section.settings.autoplay | json }};
+    const intervalMs = {{ section.settings.autoplay_speed | times: 1000 | json }};
+    let timer = null;
+
+    function renderDots(){
+      dotsWrap.innerHTML = '';
+      slides.forEach((_, i) => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'morella-qs__dot' + (i === index ? ' is-active' : '');
+        b.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        b.addEventListener('click', () => goTo(i, true));
+        dotsWrap.appendChild(b);
+      });
+    }
+
+    function update(){
+      track.style.transform = `translateX(${-index * 100}%)`;
+      const dots = Array.from(root.querySelectorAll('.morella-qs__dot'));
+      dots.forEach((d, i) => d.classList.toggle('is-active', i === index));
+    }
+
+    function goTo(i, userAction=false){
+      index = (i + slides.length) % slides.length;
+      update();
+      if (userAction) restartAutoplay();
+    }
+
+    function next(){ goTo(index + 1, true); }
+    function prev(){ goTo(index - 1, true); }
+
+    prevBtn?.addEventListener('click', prev);
+    nextBtn?.addEventListener('click', next);
+
+    function startAutoplay(){
+      if (!autoplay || slides.length < 2) return;
+      timer = setInterval(() => goTo(index + 1, false), intervalMs);
+    }
+    function stopAutoplay(){
+      if (timer) clearInterval(timer);
+      timer = null;
+    }
+    function restartAutoplay(){
+      stopAutoplay();
+      startAutoplay();
+    }
+
+    renderDots();
+    update();
+    startAutoplay();
+
+    // pause on hover (desktop)
+    root.addEventListener('mouseenter', stopAutoplay);
+    root.addEventListener('mouseleave', startAutoplay);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Morella Quote Slider",
+  "max_blocks": 6,
+  "settings": [
+    { "type": "range", "id": "max_width", "min": 640, "max": 1100, "step": 20, "unit": "px", "label": "Content width", "default": 920 },
+    { "type": "range", "id": "padding_y", "min": 40, "max": 120, "step": 4, "unit": "px", "label": "Vertical padding", "default": 72 },
+
+    { "type": "checkbox", "id": "autoplay", "label": "Autoplay", "default": true },
+    { "type": "range", "id": "autoplay_speed", "min": 3, "max": 9, "step": 1, "unit": "s", "label": "Autoplay speed", "default": 5 },
+
+    { "type": "color", "id": "btn_bg", "label": "Button background", "default": "#ffffff" },
+    { "type": "color", "id": "btn_text", "label": "Button text", "default": "#2b1c22" },
+    { "type": "color", "id": "arrow_bg", "label": "Arrow background", "default": "rgba(255,255,255,0.55)" },
+    { "type": "color", "id": "arrow_text", "label": "Arrow text", "default": "#2b1c22" },
+
+    { "type": "color", "id": "text_color", "label": "Text color (fallback)", "default": "#ffffff" },
+    { "type": "color", "id": "muted_color", "label": "Muted color (fallback)", "default": "rgba(255,255,255,0.85)" }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        { "type": "color", "id": "bg", "label": "Background color", "default": "#97a7ff" },
+        { "type": "checkbox", "id": "show_stars", "label": "Show stars", "default": true },
+        { "type": "textarea", "id": "quote", "label": "Main text", "default": "This product works wonders. A secret to keep your skin feeling super soft and hydrated." },
+        { "type": "text", "id": "subline", "label": "Subline", "default": "Morella Body Balm — Verified Buyer" },
+        { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop it yourself" },
+        { "type": "url", "id": "button_link", "label": "Button link" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Morella Quote Slider",
+      "blocks": [
+        { "type": "slide", "settings": { "bg": "#9aa8ff", "quote": "This balm melts in and leaves a silky finish — no sticky feeling.", "subline": "Morella Body Balm — Dina (Verified Buyer)" } },
+        { "type": "slide", "settings": { "bg": "#ff8bb6", "quote": "Skin stays soft for days after use. My new self-care obsession!", "subline": "Morella Glow Scrub — Alex (Verified Buyer)" } },
+        { "type": "slide", "settings": { "bg": "#ffd1e6", "quote": "The scent is dreamy and the glow is real ✨", "subline": "Morella Body Mist — Salma (Verified Buyer)" } },
+        { "type": "slide", "settings": { "bg": "#b6f0dc", "quote": "Perfect for sensitive skin — smooth, calm, and hydrated.", "subline": "Morella Body Balm — Nour (Verified Buyer)" } },
+        { "type": "slide", "settings": { "bg": "#ffe3b0", "quote": "So cute, so effective — my shower routine feels luxe now.", "subline": "Morella Scrub — Rania (Verified Buyer)" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,127 @@
+{% comment %}
+  Zigzag Quote Section
+  Animated zigzag divider (Frank Body style)
+{% endcomment %}
+
+<section class="zigzag-section color-{{ section.settings.color_scheme }}">
+  <div class="zigzag-wrap">
+    <div class="page-width zigzag-inner">
+      {% if section.settings.text != blank %}
+        <p class="zigzag-text">
+          {{ section.settings.text }}
+        </p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+/* ===============================
+   ZIGZAG SECTION
+=============================== */
+.zigzag-section {
+  background: {{ section.settings.background }};
+  padding: 0;
+}
+
+.zigzag-inner {
+  text-align: center;
+  padding: 56px 0;
+}
+
+/* Quote text */
+.zigzag-text {
+  font-family: var(--font-heading-family);
+  font-size: clamp(20px, 2.4vw, 34px);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: {{ section.settings.text_color }};
+  margin: 0;
+}
+
+/* ===============================
+   ZIGZAG LINES
+=============================== */
+.zigzag-wrap {
+  position: relative;
+}
+
+.zigzag-wrap::before,
+.zigzag-wrap::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 14px;
+  background-repeat: repeat-x;
+  background-size: 48px 14px;
+  opacity: 0.55;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='14' viewBox='0 0 48 14'%3E%3Cpath d='M0 7 L6 1 L12 13 L18 1 L24 13 L30 1 L36 13 L42 1 L48 7' fill='none' stroke='{{ section.settings.zigzag_color | replace: '#','%23' }}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
+  animation: zigzag-move 7s linear infinite;
+}
+
+.zigzag-wrap::before { top: 0; }
+.zigzag-wrap::after {
+  bottom: 0;
+  animation-direction: reverse;
+}
+
+@keyframes zigzag-move {
+  from { background-position: 0 0; }
+  to   { background-position: 48px 0; }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .zigzag-wrap::before,
+  .zigzag-wrap::after {
+    animation: none;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Animated Zigzag Quote",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "High-performance body care, active ingredients, real results."
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#3b1f16"
+    },
+    {
+      "type": "color",
+      "id": "zigzag_color",
+      "label": "Zigzag color",
+      "default": "#e8a6a6"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Animated Zigzag Quote"
+    }
+  ]
+}
+{% endschema %}

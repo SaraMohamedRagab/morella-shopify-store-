@@ -1,0 +1,300 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image-with-text": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Browse our latest products",
+            "heading_size": "h1"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop now",
+            "button_link": "shopify://collections",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "button"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/SnapInsta.to_590968090_18092392456900065_8088142737860556784_n.jpg",
+        "height": "large",
+        "desktop_image_width": "large",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-2d43d270-da98-4497-8395-7810f6c50dd9",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "collection_list_rmcxcb": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_9V3YCn": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "lips"
+          }
+        },
+        "featured_collection_ebcmdX": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "body"
+          }
+        },
+        "featured_collection_ezExXr": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "hair"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_9V3YCn",
+        "featured_collection_ebcmdX",
+        "featured_collection_ezExXr"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "Collections",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "show_view_all": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "all",
+        "products_to_show": 4,
+        "title": "New Arrivals",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": true,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "outline",
+        "color_scheme": "scheme-4",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 56,
+        "padding_bottom": 68
+      }
+    },
+    "zigzag_text_rMph6B": {
+      "type": "zigzag-text",
+      "name": "Animated Zigzag Quote",
+      "settings": {
+        "text": "SKINCARE THAT FEELS GOOD, WORKS HARD, AND FITS INTO REAL LIFE — NO RULES, NO PRESSURE, JUST CARE THAT MOVES WITH YOU",
+        "text_color": "#3b1f16",
+        "zigzag_color": "#e8a6a6",
+        "background": "#ffffff",
+        "color_scheme": ""
+      }
+    },
+    "show_tnPh3V": {
+      "type": "show",
+      "blocks": {
+        "video_8kzUq6": {
+          "type": "video",
+          "settings": {
+            "shopify_video": "shopify://files/videos/lamgalleryla_SY6142ASXE.mp4",
+            "video_url": "",
+            "poster": "shopify://shop_images/morella_product_image.png",
+            "caption": "Girl therapy bundle",
+            "alt": "Video thumbnail"
+          }
+        },
+        "video_DbncrL": {
+          "type": "video",
+          "settings": {
+            "shopify_video": "shopify://files/videos/SnapInsta.to_AQPyif6TEn0LFAi2QhY18KXSmYUjO5AV2QFu2CgmBWY4OGzKs4nUT3zxqCUyFBIqw9EAJ7LvB2WN4QvqAjpISBFyD0v2av8WmO-A_6w.mp4",
+            "video_url": "",
+            "poster": "shopify://shop_images/strawberry_product.png",
+            "caption": "Strawberry cake perfume oil roll ",
+            "alt": "Video thumbnail"
+          }
+        },
+        "video_Yw37A9": {
+          "type": "video",
+          "settings": {
+            "shopify_video": "shopify://files/videos/SnapInsta.to_AQPfERCDKqRGtjFPJ9-9rFCipMt4jspFK259t3-aQQYZ4aLTw4R9lL4Kjt2zAKrr-51ER8DYs_v5MAb9o9i5j_Yj_7MLzlBvd4oUst4.mp4",
+            "video_url": "",
+            "poster": "shopify://shop_images/ChatGPT_Image_Feb_11_2026_09_02_16_AM.png",
+            "caption": "🦄 In Your Bag pouch 🦄",
+            "alt": "Video thumbnail"
+          }
+        },
+        "video_UzgARj": {
+          "type": "video",
+          "settings": {
+            "shopify_video": "shopify://files/videos/SnapInsta.to_AQP9PrjkHQgv6FBwsYcua8AN01LmC_yrLRWKXsKj83rkMP3v5GZCB9kTjgOGOS1lILlSjaMdL2ngDEyPhJ4sePkN.mp4",
+            "video_url": "",
+            "poster": "shopify://shop_images/morella_product_final.png",
+            "caption": "Beauty Box",
+            "alt": "Video thumbnail"
+          }
+        }
+      },
+      "block_order": [
+        "video_8kzUq6",
+        "video_DbncrL",
+        "video_Yw37A9",
+        "video_UzgARj"
+      ],
+      "name": "UGC Video Carousel",
+      "settings": {
+        "heading": "SEE ME IN ACTION.",
+        "subheading": "Scroll for more, click to watch.",
+        "tile_width": 280,
+        "tile_height": 380,
+        "radius": 18
+      }
+    },
+    "split_hero_EweUdM": {
+      "type": "split-hero",
+      "name": "Split Hero (Text + Image)",
+      "settings": {
+        "image": "shopify://shop_images/morella_product_model.png",
+        "image_alt": "Morella product",
+        "image_left": false,
+        "kicker": "Body care",
+        "heading": "The scrub that made me famous.",
+        "text": "<p>Soft, smooth, and glowing skin — in minutes.</p>",
+        "button_label": "Shop now",
+        "button_link": "shopify://collections",
+        "bg": "#f6d6dc",
+        "heading_color": "#2b1c22",
+        "text_color": "#3d2a33",
+        "kicker_color": "#6a4a57",
+        "btn_bg": "#f271cd",
+        "btn_text": "#ffffff"
+      }
+    },
+    "morella_quote_slider_BY9VRM": {
+      "type": "morella-quote-slider",
+      "blocks": {
+        "slide_hP7FPr": {
+          "type": "slide",
+          "settings": {
+            "bg": "#9aa8ff",
+            "show_stars": true,
+            "quote": "This balm melts in and leaves a silky finish — no sticky feeling.",
+            "subline": "Morella Body Balm — Dina (Verified Buyer)",
+            "button_label": "Shop it yourself",
+            "button_link": ""
+          }
+        },
+        "slide_Uh938z": {
+          "type": "slide",
+          "settings": {
+            "bg": "#ff8bb6",
+            "show_stars": true,
+            "quote": "Skin stays soft for days after use. My new self-care obsession!",
+            "subline": "Morella Glow Scrub — Alex (Verified Buyer)",
+            "button_label": "Shop it yourself",
+            "button_link": ""
+          }
+        },
+        "slide_VTBLE3": {
+          "type": "slide",
+          "settings": {
+            "bg": "#ffd1e6",
+            "show_stars": true,
+            "quote": "The scent is dreamy and the glow is real ✨",
+            "subline": "Morella Body Mist — Salma (Verified Buyer)",
+            "button_label": "Shop it yourself",
+            "button_link": "shopify://collections/all"
+          }
+        },
+        "slide_9JfmDR": {
+          "type": "slide",
+          "settings": {
+            "bg": "#b6f0dc",
+            "show_stars": true,
+            "quote": "Perfect for sensitive skin — smooth, calm, and hydrated.",
+            "subline": "Morella Body Balm — Nour (Verified Buyer)",
+            "button_label": "Shop it yourself",
+            "button_link": ""
+          }
+        },
+        "slide_JwXeNN": {
+          "type": "slide",
+          "settings": {
+            "bg": "#ffe3b0",
+            "show_stars": true,
+            "quote": "So cute, so effective — my shower routine feels luxe now.",
+            "subline": "Morella Scrub — Rania (Verified Buyer)",
+            "button_label": "Shop it yourself",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_hP7FPr",
+        "slide_Uh938z",
+        "slide_VTBLE3",
+        "slide_9JfmDR",
+        "slide_JwXeNN"
+      ],
+      "name": "Morella Quote Slider",
+      "settings": {
+        "max_width": 920,
+        "padding_y": 72,
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "btn_bg": "#ffffff",
+        "btn_text": "#2b1c22",
+        "arrow_bg": "#ffffff8c",
+        "arrow_text": "#2b1c22",
+        "text_color": "#9b046f",
+        "muted_color": "#9b046f"
+      }
+    }
+  },
+  "order": [
+    "image-with-text",
+    "collection_list_rmcxcb",
+    "featured-collection",
+    "zigzag_text_rMph6B",
+    "show_tnPh3V",
+    "split_hero_EweUdM",
+    "morella_quote_slider_BY9VRM"
+  ]
+}
